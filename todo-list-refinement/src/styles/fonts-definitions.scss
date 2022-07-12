@@ -1,0 +1,48 @@
+@use './variables/index' as *;
+@use './mixins/index' as *;
+
+$font-family-poppins-light: Poppins-Light, sans-serif !important;
+$font-family-poppins-regular: Poppins-Regular, sans-serif !important;
+$font-family-poppins-bold: Poppins-Bold, sans-serif !important;
+$font-family-poppins-extra-bold: Poppins-ExtraBold, sans-serif !important;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: $font-family-poppins-bold;
+  color: $main-black;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: $font-56 ;
+}
+
+h2 {
+  font-size: $font-48 ;
+}
+
+p {
+  font-family: $font-family-poppins-regular;
+  font-size: $font-18 !important;
+  line-height: 1.2;
+  color: $main-yellow-3;
+}
+
+body {
+  min-height: 100%;
+  background-color: $main-white;
+  color: $main-black !important;
+  font-size: $font-16 !important;
+  font-family: $font-family-poppins-regular;
+  font-weight: normal;
+}

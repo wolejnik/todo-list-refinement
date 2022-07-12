@@ -1,0 +1,19 @@
+@use './fonts-files';
+@use './fonts-definitions';
+
+// Poppins
+.font-poppins-light {
+  font-family: fonts-definitions.$font-family-poppins-light;
+}
+
+.font-poppins-regular {
+  font-family: fonts-definitions.$font-family-poppins-regular;
+}
+
+.font-poppins-bold {
+  font-family: fonts-definitions.$font-family-poppins-bold;
+}
+
+.font-poppins-extra-bold {
+  font-family: fonts-definitions.$font-family-poppins-extra-bold;
+}

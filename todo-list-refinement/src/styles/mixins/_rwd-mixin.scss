@@ -1,0 +1,67 @@
+@use '../variables' as *;
+
+$grid-gutter-width: 0;
+
+// Bootstrap partial imports to keep the bloat away
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/reboot';
+@import '~bootstrap/scss/type';
+@import '~bootstrap/scss/images';
+@import '~bootstrap/scss/grid';
+@import '~bootstrap/scss/utilities';
+@import '~bootstrap/scss/buttons';
+@import '~bootstrap/scss/transitions';
+@import '~bootstrap/scss/modal';
+@import '~bootstrap/scss/close';
+@import '~bootstrap/scss/nav';
+@import '~bootstrap/scss/navbar';
+
+//// BREAKPOINTS
+
+@mixin respond-to($grid-breakpoints) {
+  @if $grid-breakpoints == 'mms-xxl' {
+    @media (min-width: 1680px) {
+      @content;
+    }
+  }
+
+  @if $grid-breakpoints == 'mms-xl' {
+    @media (min-width: 1200px) and (max-width: 1679px) {
+      @content;
+    }
+  } @else if $grid-breakpoints == 'mms-lg' {
+    @media (min-width: 992px) and (max-width: 1199px) {
+      @content;
+    }
+  } @else if $grid-breakpoints == 'mms-md' {
+    @media (min-width: 768px) and (max-width: 991px) {
+      @content;
+    }
+  } @else if $grid-breakpoints == 'mms-sm' {
+    @media (min-width: 576px) and (max-width: 767px) {
+      @content;
+    }
+  } @else if $grid-breakpoints == 'mms' {
+    @media (max-width: 575px) {
+      @content;
+    }
+  }
+}
+
+@mixin respond-to-many($grid-breakpoints...) {
+  @each $breakpoint in $grid-breakpoints {
+    @include respond-to($breakpoint) {
+      @content;
+    }
+  }
+}
+
+@mixin set-container-width-regarding-sidebar() {
+  @include media-breakpoint-up(mms-xl) {
+    width: calc(100% - 64px) !important;
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+  }
+}
