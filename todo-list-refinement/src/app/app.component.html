@@ -1,24 +1,23 @@
+<div class="container-fluid p-0">
+  <app-navbar></app-navbar>
+</div>
 <div class="d-flex justify-content-center">
-  <h1>Test</h1>
+  <h1>{{ "dashboard.title" | translate }}</h1>
   <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum tempora atque
-    vero expedita et minus officia culpa, officiis vitae nihil amet incidunt
-    praesentium velit, tempore ut, magnam quo? Dolores, incidunt.
+    {{ "dashboard.text" | translate }}
   </p>
   <hr />
   <hr />
   <hr />
-  <h2>Test</h2>
+  <h2>{{ "dashboard.title" | translate }}</h2>
   <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum tempora atque
-    vero expedita et minus officia culpa, officiis vitae nihil amet incidunt
-    praesentium velit, tempore ut, magnam quo? Dolores, incidunt.
+    {{ "dashboard.text" | translate }}
   </p>
   <hr />
   <h2>Test</h2>
   <p class="font-poppins-extra-bold">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum tempora atque
-    vero expedita et minus officia culpa, officiis vitae nihil amet incidunt
-    praesentium velit, tempore ut, magnam quo? Dolores, incidunt.
+    {{ "dashboard.text" | translate }}
   </p>
 </div>
+
+<router-outlet></router-outlet>

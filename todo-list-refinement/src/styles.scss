@@ -1,3 +1,20 @@
+@use './styles/variables/index' as *;
+@use './styles/mixins/index' as *;
 @import "./styles/index";
 
-html, body { height: 100%; }
+body {
+  min-height: 100%;
+  background-color: $main-grey-7;
+  color: $main-black !important;
+  font-size: $font-16 !important;
+  font-family: $font-family-poppins-regular;
+  font-weight: normal;
+}
+
+.white-icon {
+  color: $main-white;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

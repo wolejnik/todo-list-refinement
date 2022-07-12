@@ -18,17 +18,16 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: $font-family-poppins-bold;
-  color: $main-black;
+  font-family: $font-family-poppins-regular;
   font-weight: 700;
 }
 
 h1 {
-  font-size: $font-56 ;
+  font-size: $font-48 ;
 }
 
 h2 {
-  font-size: $font-48 ;
+  font-size: $font-32 ;
 }
 
 p {
@@ -36,13 +35,4 @@ p {
   font-size: $font-18 !important;
   line-height: 1.2;
   color: $main-yellow-3;
-}
-
-body {
-  min-height: 100%;
-  background-color: $main-white;
-  color: $main-black !important;
-  font-size: $font-16 !important;
-  font-family: $font-family-poppins-regular;
-  font-weight: normal;
 }

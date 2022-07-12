@@ -1,3 +1,4 @@
+import { LangSwitcherComponent } from './components/lang-switcher/lang-switcher.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,7 +15,8 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    LangSwitcherComponent
   ],
   imports: [
     BrowserModule,

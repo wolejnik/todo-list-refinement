@@ -1,0 +1,9 @@
+{
+  "app": {
+    "title": "Lista zadań"
+  },
+  "dashboard": {
+      "title": "Tłumaczenie demo",
+      "text": "To jest aplikacja testowa dla ngx-translate"
+  }
+}
