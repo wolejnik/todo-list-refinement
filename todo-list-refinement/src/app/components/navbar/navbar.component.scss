@@ -1,7 +1,8 @@
-@use '../../../styles/variables/index' as var;
+@use 'variables' as var;
 
 .navbar-wrapper {
   background-color: var.$main-violet;
+  height: 85px;
 
   &__title {
     color: var.$main-white;

@@ -1,1 +1,11 @@
-<h1>todo-list-component its works!</h1>
+<section class="todo-list-wrapper">
+  <app-todo-list-column
+    [dataColumn]="data | async | filterList: 'todo'"
+  ></app-todo-list-column>
+  <app-todo-list-column
+    [dataColumn]="data | async | filterList: 'inProgress'"
+  ></app-todo-list-column>
+  <app-todo-list-column
+    [dataColumn]="data | async | filterList: 'done'"
+  ></app-todo-list-column>
+</section>
