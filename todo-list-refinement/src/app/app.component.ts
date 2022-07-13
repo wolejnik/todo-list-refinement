@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
+import { loadAll } from './logic/store/todo.actions';
+import * as TodoStoreSelectors from './logic/store/todo.selectors';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +12,15 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
   public title = 'todo-list-refinement';
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, private store: Store) {
     this.translate.setDefaultLang('pl');
     this.translate.use('pl');
+    this.store.dispatch(loadAll());
+
+    this.store.select(TodoStoreSelectors.getItems).subscribe((data) => {
+      if (data) {
+        console.log('>>>', data);
+      }
+    });
   }
 }
