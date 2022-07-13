@@ -3,7 +3,7 @@
 @import "./styles/index";
 
 body {
-  min-height: 100%;
+  height: calc(100vh - 85px);
   background-color: $main-grey-7;
   color: $main-black !important;
   font-size: $font-16 !important;
