@@ -1,0 +1,14 @@
+@use 'variables' as const;
+
+.todo-list {
+  list-style: none;
+
+  &__item {
+    display: flex;
+    background-color: const.$main-grey-5;
+    border: 3px solid const.$main-gray-3;
+    border-radius: 0.5rem;
+    padding: 1rem 5rem;
+    margin: 1rem 0;
+  }
+}

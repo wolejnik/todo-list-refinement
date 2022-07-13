@@ -16,11 +16,5 @@ export class AppComponent {
     this.translate.setDefaultLang('pl');
     this.translate.use('pl');
     this.store.dispatch(loadAll());
-
-    this.store.select(TodoStoreSelectors.getItems).subscribe((data) => {
-      if (data) {
-        console.log('>>>', data);
-      }
-    });
   }
 }
