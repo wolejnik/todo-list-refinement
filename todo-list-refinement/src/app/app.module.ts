@@ -14,8 +14,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { ToDoStoreModule } from './logic/store/todo.module';
-import { TodoEffects } from './logic/store/todo.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
@@ -34,9 +32,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
       },
     }),
     StoreModule.forRoot({}, {}),
-    EffectsModule.forRoot([TodoEffects]),
+    EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument(),
-    ToDoStoreModule,
     MatIconModule,
   ],
   providers: [],

@@ -14,11 +14,14 @@ export const loadAllFailure = createAction(
 );
 
 export const addItem = createAction(
-  '[Todo List] Load All',
-  props<{ item: ToDoItem }>()
+  '[Todo List] Add item',
+  props<{ name: string }>()
 );
 
-export const addItemSuccess = createAction('[Todo List] Add item Success');
+export const addItemSuccess = createAction(
+  '[Todo List] Add item Success',
+  props<{ item: ToDoItem }>()
+);
 
 export const addItemFailure = createAction(
   '[Todo List] Add item Failure',

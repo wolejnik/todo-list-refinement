@@ -56,4 +56,17 @@ export class TodoService {
   public getTodoListItems(): Observable<ToDoItem[]> {
     return of(this.todoItems);
   }
+
+  public createTask(name: string): Observable<ToDoItem> {
+    return of({
+      id: this.getRandomIndex(),
+      title: name,
+      desc: 'Test test',
+      status: 'todo',
+    } as ToDoItem);
+  }
+
+  public getRandomIndex(): string {
+    return Math.round(Math.random() * 100 + 10).toString();
+  }
 }
