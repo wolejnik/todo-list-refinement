@@ -1,6 +1,7 @@
 {
   "app": {
-    "title": "Todo List"
+    "title": "Todo List",
+    "lang": "Polski"
   },
   "dashboard": {
       "title": "Translation demo",
@@ -9,6 +10,10 @@
   "new-task-dialog": {
     "title": "Create a new task",
     "add": "Add a task",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "nameTask": "Task name",
+    "nameTaskError": "Title a task is required",
+    "descTask": "Task description",
+    "typeTask": "Task type"
   }
 }

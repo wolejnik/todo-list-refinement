@@ -1,6 +1,7 @@
 {
   "app": {
-    "title": "Lista zadań"
+    "title": "Lista zadań",
+    "lang": "English"
   },
   "dashboard": {
       "title": "Tłumaczenie demo",
@@ -9,6 +10,10 @@
   "new-task-dialog": {
     "title": "Stwórz nowe zadanie",
     "add": "Dodaj zadanie",
-    "cancel": "Anuluj"
+    "cancel": "Anuluj",
+    "nameTask": "Nazwa zadania",
+    "nameTaskError": "Nazwa zadania jest wymagana!",
+    "descTask": "Opis zadania",
+    "typeTask": "Status zadania"
   }
 }
