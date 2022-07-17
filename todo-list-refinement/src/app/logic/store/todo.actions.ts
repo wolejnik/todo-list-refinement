@@ -15,7 +15,7 @@ export const loadAllFailure = createAction(
 
 export const addItem = createAction(
   '[Todo List] Add item',
-  props<{ name: string }>()
+  props<{ name: string, statusTask: string, desc?: string,  }>()
 );
 
 export const addItemSuccess = createAction(

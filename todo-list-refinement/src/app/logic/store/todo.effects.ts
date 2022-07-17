@@ -25,12 +25,14 @@ export class TodoEffects {
     this.actions$.pipe(
       ofType(fromActions.addItem),
       switchMap((action) => {
-        return this.todoService.createTask(action.name).pipe(
-          mergeMap((newTask) => [
-            fromActions.addItemSuccess({ item: newTask }),
-          ]),
-          catchError((error) => of(fromActions.addItemFailure({ error })))
-        );
+        return this.todoService
+          .createTask(action.name, action.statusTask, action.desc)
+          .pipe(
+            mergeMap((newTask) => [
+              fromActions.addItemSuccess({ item: newTask }),
+            ]),
+            catchError((error) => of(fromActions.addItemFailure({ error })))
+          );
       })
     )
   );

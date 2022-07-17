@@ -57,12 +57,12 @@ export class TodoService {
     return of(this.todoItems);
   }
 
-  public createTask(name: string): Observable<ToDoItem> {
+  public createTask(name: string, statusTask: string, desc?: string): Observable<ToDoItem> {
     return of({
       id: this.getRandomIndex(),
       title: name,
-      desc: 'Test test',
-      status: 'todo',
+      desc: desc? desc: '',
+      status: statusTask,
     } as ToDoItem);
   }
 
