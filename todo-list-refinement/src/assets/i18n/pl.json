@@ -5,5 +5,10 @@
   "dashboard": {
       "title": "Tłumaczenie demo",
       "text": "To jest aplikacja testowa dla ngx-translate"
+  },
+  "new-task-dialog": {
+    "title": "Stwórz nowe zadanie",
+    "add": "Dodaj zadanie",
+    "cancel": "Anuluj"
   }
 }

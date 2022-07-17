@@ -1,5 +1,17 @@
+@use 'mixins' as rwd;
+
 .todo-list-wrapper {
   height: 100%;
   display: flex;
   justify-content: space-around;
+
+  @include rwd.media-breakpoint-down('md') {
+    flex-direction: column;
+  }
+}
+
+.new-task-wrapper {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
 }

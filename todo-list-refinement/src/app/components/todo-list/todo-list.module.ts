@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ToDoStoreModule } from 'src/app/logic/store/todo.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 @NgModule({
   imports: [
     CommonModule,
@@ -24,6 +25,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     FormsModule,
     ReactiveFormsModule,
+    MatFormFieldModule,
   ],
   declarations: [
     TodoListComponent,
