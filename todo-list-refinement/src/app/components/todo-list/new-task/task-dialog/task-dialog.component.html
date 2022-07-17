@@ -1,0 +1,57 @@
+<div class="new-task-dialog">
+  <div class="new-task-dialog__title">
+    <h3>{{ "new-task-dialog.title" | translate }}</h3>
+  </div>
+  <div class="new-task-dialog__form">
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+      <!-- content -->
+      <div class="form-group pt-3">
+        <label>{{ "new-task-dialog.nameTask" | translate }}</label>
+        <input
+          type="text"
+          formControlName="title"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.title.errors }"
+        />
+        <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+          <div *ngIf="f.title.errors.required">
+            {{ "new-task-dialog.nameTaskError" | translate }}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group pt-3">
+        <label>{{ "new-task-dialog.descTask" | translate }}</label>
+        <input
+          type="text"
+          formControlName="desc"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.desc.errors }"
+        />
+      </div>
+
+      <div class="form-group pt-3">
+        <label>{{ "new-task-dialog.typeTask" | translate }}</label>
+        <select
+          class="form-select"
+          formControlName="status"
+          aria-label="Default select example"
+          (change)="changeType($event)"
+        >
+          <option *ngFor="let statusTask of typesTask" [ngValue]="statusTask">
+            {{ statusTask }}
+          </option>
+        </select>
+      </div>
+
+      <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">
+          {{ "new-task-dialog.cancel" | translate }}
+        </button>
+        <button mat-button cdkFocusInitial color="primary" type="submit">
+          {{ "new-task-dialog.add" | translate }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -38,20 +38,20 @@ export const reducer = createReducer(
     error: error,
   })),
 
-  on(fromActions.addItem, (state, { item }) => ({
+  on(fromActions.addItem, (state) => ({
+    ...state,
+    loading: false,
+    error: '',
+  })),
+
+  on(fromActions.addItemSuccess, (state, { item }) => ({
     ...state,
     items: [...state.items, item],
     loading: false,
     error: '',
   })),
 
-  on(fromActions.updateItemSuccess, (state) => ({
-    ...state,
-    loading: false,
-    error: '',
-  })),
-
-  on(fromActions.updateItemFailure, (state, { error }) => ({
+  on(fromActions.addItemFailure, (state, { error }) => ({
     ...state,
     loading: false,
     error: error,

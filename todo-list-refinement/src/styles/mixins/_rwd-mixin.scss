@@ -21,29 +21,29 @@ $grid-gutter-width: 0;
 //// BREAKPOINTS
 
 @mixin respond-to($grid-breakpoints) {
-  @if $grid-breakpoints == 'mms-xxl' {
+  @if $grid-breakpoints == 'xxl' {
     @media (min-width: 1680px) {
       @content;
     }
   }
 
-  @if $grid-breakpoints == 'mms-xl' {
+  @if $grid-breakpoints == 'xl' {
     @media (min-width: 1200px) and (max-width: 1679px) {
       @content;
     }
-  } @else if $grid-breakpoints == 'mms-lg' {
+  } @else if $grid-breakpoints == 'lg' {
     @media (min-width: 992px) and (max-width: 1199px) {
       @content;
     }
-  } @else if $grid-breakpoints == 'mms-md' {
+  } @else if $grid-breakpoints == 'md' {
     @media (min-width: 768px) and (max-width: 991px) {
       @content;
     }
-  } @else if $grid-breakpoints == 'mms-sm' {
+  } @else if $grid-breakpoints == 'sm' {
     @media (min-width: 576px) and (max-width: 767px) {
       @content;
     }
-  } @else if $grid-breakpoints == 'mms' {
+  } @else if $grid-breakpoints == 'xs' {
     @media (max-width: 575px) {
       @content;
     }
@@ -59,7 +59,7 @@ $grid-gutter-width: 0;
 }
 
 @mixin set-container-width-regarding-sidebar() {
-  @include media-breakpoint-up(mms-xl) {
+  @include media-breakpoint-up(xl) {
     width: calc(100% - 64px) !important;
     padding-left: 25px !important;
     padding-right: 25px !important;

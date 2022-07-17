@@ -7,16 +7,32 @@ import * as fromActions from './todo.actions';
 
 @Injectable()
 export class TodoEffects {
-  constructor(private actions$: Actions, private todosService: TodoService) {}
+  constructor(private actions$: Actions, private todoService: TodoService) {}
 
   loadTodoList = createEffect(() =>
     this.actions$.pipe(
       ofType(fromActions.loadAll),
       switchMap(() => {
-        return this.todosService.getTodoListItems().pipe(
+        return this.todoService.getTodoListItems().pipe(
           mergeMap((items) => [fromActions.loadAllSuccess({ items })]),
           catchError((error) => of(fromActions.loadAllFailure({ error })))
         );
+      })
+    )
+  );
+
+  addTask = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fromActions.addItem),
+      switchMap((action) => {
+        return this.todoService
+          .createTask(action.name, action.statusTask, action.desc)
+          .pipe(
+            mergeMap((newTask) => [
+              fromActions.addItemSuccess({ item: newTask }),
+            ]),
+            catchError((error) => of(fromActions.addItemFailure({ error })))
+          );
       })
     )
   );

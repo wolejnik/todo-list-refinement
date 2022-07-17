@@ -2,13 +2,13 @@
   <ng-container *ngIf="currentLang === 'pl'; else engTmp">
     <button class="language-btn" (click)="useLanguage('en')">
       <mat-icon class="language-btn__icon white-icon">language</mat-icon>
-      <span class="language-btn__text">English</span>
+      <span class="language-btn__text">{{ "app.lang" | translate }}</span>
     </button>
   </ng-container>
   <ng-template #engTmp>
     <button class="language-btn" (click)="useLanguage('pl')">
       <mat-icon class="language-btn__icon white-icon">language</mat-icon>
-      <span class="language-btn__text">Polski</span>
+      <span class="language-btn__text">{{ "app.lang" | translate }}</span>
     </button>
   </ng-template>
 </div>
