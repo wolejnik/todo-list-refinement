@@ -1,4 +1,4 @@
-import { ToDoItem } from 'src/app/models/todo-item.model';
+import { ToDoItem } from '@app/models/todo-item.model';
 import { createReducer, on } from '@ngrx/store';
 import * as fromActions from './todo.actions';
 

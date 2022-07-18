@@ -1,5 +1,5 @@
-import { updateItem } from './../../../logic/store/todo.actions';
-import { ToDoItem } from './../../../models/todo-item.model';
+import { updateItem } from '@app/logic/store/todo.actions';
+import { ToDoItem } from '@app/models/todo-item.model';
 import {
   ChangeDetectionStrategy,
   Component,

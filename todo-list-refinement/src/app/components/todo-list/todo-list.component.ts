@@ -1,9 +1,9 @@
 import { Observable } from 'rxjs';
-import { ToDoItem } from 'src/app/models/todo-item.model';
+import { ToDoItem } from '@app/models/todo-item.model';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { loadAll } from 'src/app/logic/store/todo.actions';
-import * as TodoStoreSelectors from '../../logic/store/todo.selectors';
+import { loadAll } from '@app/logic/store/todo.actions';
+import * as TodoStoreSelectors from '@app/logic/store/todo.selectors';
 
 @Component({
   selector: 'app-todo-list',

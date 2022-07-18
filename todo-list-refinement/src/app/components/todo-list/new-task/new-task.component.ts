@@ -1,4 +1,4 @@
-import { addItem } from './../../../logic/store/todo.actions';
+import { addItem } from '@app/logic/store/todo.actions';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
