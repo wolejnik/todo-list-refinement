@@ -21,7 +21,7 @@ export class TodoEffects {
     )
   );
 
-  addTask = createEffect(() =>
+  addTask$ = createEffect(() =>
     this.actions$.pipe(
       ofType(fromActions.addItem),
       switchMap((action) => {
@@ -34,6 +34,22 @@ export class TodoEffects {
             catchError((error) => of(fromActions.addItemFailure({ error })))
           );
       })
+    )
+  );
+
+  updateeTask$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fromActions.updateItem),
+      mergeMap(() => [fromActions.updateItemSuccess()]),
+      catchError((error) => of(fromActions.updateItemFailure({ error })))
+    )
+  );
+
+  removeTask$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fromActions.removeItem),
+      mergeMap(() => [fromActions.removeItemSuccess()]),
+      catchError((error) => of(fromActions.removeItemFailure({ error })))
     )
   );
 }
