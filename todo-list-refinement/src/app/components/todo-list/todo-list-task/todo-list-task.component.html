@@ -1,6 +1,5 @@
-<div class="d-flex align-items-end">
+<div class="d-flex align-items-end justify-content-between">
   <h5>{{ task?.title }}</h5>
-
   <button
     mat-icon-button
     [matMenuTriggerFor]="moreOptions"
@@ -9,13 +8,13 @@
     <mat-icon>more_vert</mat-icon>
   </button>
   <mat-menu #moreOptions="matMenu">
-    <button mat-menu-item (click)="actionUpdate()">
-      <mat-icon>update</mat-icon>
-      <span>update</span>
+    <button mat-menu-item (click)="actionUpdate(task)">
+      <mat-icon>edit</mat-icon>
+      <span>{{ "actions.edit" | translate }}</span>
     </button>
     <button mat-menu-item (click)="actionRemove(task?.id)">
       <mat-icon>remove_circle_outline</mat-icon>
-      <span>remove</span>
+      <span>{{ "actions.remove" | translate }}</span>
     </button>
     <button
       *ngIf="task?.status !== 'todo'"
@@ -23,7 +22,7 @@
       (click)="changeStatus(task, 'todo')"
     >
       <mat-icon>description</mat-icon>
-      <span>todo</span>
+      <span>{{ "actions.moveTodo" | translate}}</span>
     </button>
     <button
       *ngIf="task?.status !== 'inProgress'"
@@ -31,7 +30,7 @@
       (click)="changeStatus(task, 'inProgress')"
     >
       <mat-icon>timeline</mat-icon>
-      <span>inprogress</span>
+      <span>{{ "actions.moveInProgress" | translate }}</span>
     </button>
     <button
       *ngIf="task?.status !== 'done'"
@@ -39,7 +38,7 @@
       (click)="changeStatus(task, 'done')"
     >
       <mat-icon>done</mat-icon>
-      <span>done</span>
+      <span>{{ "actions.moveDone" | translate }}</span>
     </button>
   </mat-menu>
 </div>

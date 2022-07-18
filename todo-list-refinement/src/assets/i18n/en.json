@@ -5,15 +5,26 @@
   },
   "dashboard": {
       "title": "Translation demo",
-      "text": "This is a simple demonstration app for ngx-translate"
+      "text": "This is a simple demonstration app for ngx-translate",
+      "columnToDo": "To do",
+      "columnInProgress": "In progress",
+      "columnDone": "Done"
   },
   "new-task-dialog": {
     "title": "Create a new task",
+    "titleEdit": "Edit a task",
     "add": "Add a task",
     "cancel": "Cancel",
     "nameTask": "Task name",
     "nameTaskError": "Title a task is required",
     "descTask": "Task description",
     "typeTask": "Task type"
+  },
+  "actions" : {
+    "edit": "Edit a task",
+    "remove": "Removed a task",
+    "moveInProgress": "Move to in progress",
+    "moveTodo": "Move to todo",
+    "moveDone": "Move to done"
   }
 }

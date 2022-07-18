@@ -10,7 +10,6 @@ import { TaskDialogComponent } from './task-dialog/task-dialog.component';
   styleUrls: ['./new-task.component.scss'],
 })
 export class NewTaskComponent implements OnInit {
-  public value: string = '';
   constructor(public dialog: MatDialog, private store: Store) {}
 
   ngOnInit() {}
@@ -18,7 +17,7 @@ export class NewTaskComponent implements OnInit {
   public addNewTaskDialog() {
     const dialogRef = this.dialog.open(TaskDialogComponent, {
       width: '500px',
-      data: { value: '' },
+      data: { isEdit: false },
       disableClose: true,
     });
 

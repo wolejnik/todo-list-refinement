@@ -8,6 +8,8 @@ import {
 } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { removeItem } from 'src/app/logic/store/todo.actions';
+import { MatDialog } from '@angular/material/dialog';
+import { TaskDialogComponent } from '../new-task/task-dialog/task-dialog.component';
 
 @Component({
   selector: 'app-todo-list-task',
@@ -18,11 +20,33 @@ import { removeItem } from 'src/app/logic/store/todo.actions';
 export class TodoListTaskComponent implements OnInit {
   @Input() task!: ToDoItem;
 
-  constructor(private store: Store) {}
+  constructor(public dialog: MatDialog, private store: Store) {}
 
   ngOnInit() {}
 
-  public actionUpdate() {}
+  public actionUpdate(task: ToDoItem) {
+    const dialogRef = this.dialog.open(TaskDialogComponent, {
+      width: '500px',
+      data: { isEdit: true, task: task },
+      disableClose: true,
+    });
+
+    dialogRef.componentInstance.onSubmitReason.subscribe((data) => {
+      if (data) {
+        this.store.dispatch(
+          updateItem({
+            newItem: {
+              id: task?.id,
+              title: data?.title,
+              desc: data?.desc,
+              status: data.status,
+            },
+          })
+        );
+      }
+    });
+  }
+
   public actionRemove(taskId?: string) {
     this.store.dispatch(
       removeItem({
@@ -30,6 +54,7 @@ export class TodoListTaskComponent implements OnInit {
       })
     );
   }
+  
   public changeStatus(
     task: ToDoItem,
     newStatusTask: 'todo' | 'inProgress' | 'done'

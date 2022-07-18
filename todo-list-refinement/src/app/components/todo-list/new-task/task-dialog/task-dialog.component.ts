@@ -21,13 +21,19 @@ export class TaskDialogComponent {
 
   constructor(
     public dialogRef: MatDialogRef<TaskDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: ToDoItem,
+    @Inject(MAT_DIALOG_DATA) public data: any,
     private fb: FormBuilder
   ) {
     this.taskForm = this.fb.group({
-      title: ['', Validators.required],
-      desc: [''],
-      status: ['todo', Validators.required],
+      title: [
+        this.data?.isEdit ? this.data.task.title : '',
+        Validators.required,
+      ],
+      desc: [this.data?.isEdit ? this.data.task.desc : ''],
+      status: [
+        this.data?.isEdit ? this.data.task.status : 'todo',
+        Validators.required,
+      ],
     });
   }
 

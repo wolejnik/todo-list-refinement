@@ -5,15 +5,26 @@
   },
   "dashboard": {
       "title": "Tłumaczenie demo",
-      "text": "To jest aplikacja testowa dla ngx-translate"
+      "text": "To jest aplikacja testowa dla ngx-translate",
+      "columnToDo": "Do zrobienia",
+      "columnInProgress": "W trakcie",
+      "columnDone": "Wykonane"
   },
   "new-task-dialog": {
     "title": "Stwórz nowe zadanie",
+    "titleEdit": "Edycja zadania",
     "add": "Dodaj zadanie",
     "cancel": "Anuluj",
     "nameTask": "Nazwa zadania",
     "nameTaskError": "Nazwa zadania jest wymagana!",
     "descTask": "Opis zadania",
     "typeTask": "Status zadania"
+  },
+  "actions" : {
+    "edit": "Edytuj zadanie",
+    "remove": "Usuń zadanie",
+    "moveInProgress": "Przenieś do w trakcie realizacji",
+    "moveTodo": "Przenieś do zrobienia",
+    "moveDone": "Przenieś do wykonanych"
   }
 }

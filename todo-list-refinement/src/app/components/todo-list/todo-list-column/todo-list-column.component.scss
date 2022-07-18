@@ -2,9 +2,13 @@
 
 .todo-list {
   list-style: none;
+  background-color: const.$main-grey-5;
+  border-radius: 0.5rem;
+
 
   &__item {
     display: flex;
+    width: 100%;
     background-color: const.$main-yellow-5;
     border: 3px solid const.$main-yellow-3;
     border-radius: 0.5rem;

@@ -1,6 +1,12 @@
 <div class="new-task-dialog">
   <div class="new-task-dialog__title">
-    <h3>{{ "new-task-dialog.title" | translate }}</h3>
+    <ng-container *ngIf="this.data?.isEdit; else newTaskTmp">
+      <h3>{{ "new-task-dialog.titleEdit" | translate }}</h3>
+    </ng-container>
+    <ng-template #newTaskTmp>
+      <h3>{{ "new-task-dialog.title" | translate }}</h3>
+    </ng-template>
+
   </div>
   <div class="new-task-dialog__form">
     <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
