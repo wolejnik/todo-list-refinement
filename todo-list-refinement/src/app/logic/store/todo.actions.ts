@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { ToDoItem } from 'src/app/models/todo-item.model';
+import { ToDoItem } from '@app/models/todo-item.model';
 
 export const loadAll = createAction('[Todo List] Load All');
 
@@ -15,7 +15,7 @@ export const loadAllFailure = createAction(
 
 export const addItem = createAction(
   '[Todo List] Add item',
-  props<{ name: string, statusTask: string, desc?: string,  }>()
+  props<{ name: string; statusTask: string; desc?: string }>()
 );
 
 export const addItemSuccess = createAction(
@@ -30,7 +30,7 @@ export const addItemFailure = createAction(
 
 export const updateItem = createAction(
   '[Todo List] Update',
-  props<{ item: ToDoItem }>()
+  props<{ newItem: ToDoItem }>()
 );
 
 export const updateItemSuccess = createAction('[Todo List] Update Success');
@@ -42,7 +42,7 @@ export const updateItemFailure = createAction(
 
 export const removeItem = createAction(
   '[Todo List] Remove',
-  props<{ id: string }>()
+  props<{ id?: string }>()
 );
 
 export const removeItemSuccess = createAction('[Todo List] Remove Success');

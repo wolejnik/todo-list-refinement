@@ -1,13 +1,23 @@
 <section class="todo-list-wrapper">
-  <app-todo-list-column
-    [dataColumn]="data | async | filterList: 'todo'"
-  ></app-todo-list-column>
-  <app-todo-list-column
-    [dataColumn]="data | async | filterList: 'inProgress'"
-  ></app-todo-list-column>
-  <app-todo-list-column
-    [dataColumn]="data | async | filterList: 'done'"
-  ></app-todo-list-column>
+  <div class="col p-4">
+    <h2 class="px-3">{{ "dashboard.columnToDo" | translate }}</h2>
+    <app-todo-list-column
+      [dataColumn]="data | async | filterList: 'todo'"
+    ></app-todo-list-column>
+  </div>
+  <div class="col p-4">
+    <h2 class="px-3">{{ "dashboard.columnInProgress" | translate }}</h2>
+
+    <app-todo-list-column
+      [dataColumn]="data | async | filterList: 'inProgress'"
+    ></app-todo-list-column>
+  </div>
+  <div class="col p-4">
+    <h2 class="px-3">{{ "dashboard.columnDone" | translate }}</h2>
+    <app-todo-list-column
+      [dataColumn]="data | async | filterList: 'done'"
+    ></app-todo-list-column>
+  </div>
 </section>
 <section class="new-task-wrapper">
   <app-new-task></app-new-task>

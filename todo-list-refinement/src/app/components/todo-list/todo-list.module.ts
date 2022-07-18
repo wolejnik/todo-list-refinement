@@ -13,6 +13,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ToDoStoreModule } from 'src/app/logic/store/todo.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatMenuModule } from '@angular/material/menu';
+import { TodoListTaskComponent } from './todo-list-task/todo-list-task.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -26,10 +28,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
+    MatMenuModule,
   ],
   declarations: [
     TodoListComponent,
     TodoListColumnComponent,
+    TodoListTaskComponent,
     NewTaskComponent,
     TaskDialogComponent,
     FilterListPipe,

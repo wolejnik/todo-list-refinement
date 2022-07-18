@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { ToDoItem } from 'src/app/models/todo-item.model';
+import { ToDoItem } from '@app/models/todo-item.model';
 
 @Pipe({
   name: 'filterList',

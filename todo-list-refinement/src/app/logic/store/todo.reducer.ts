@@ -1,4 +1,4 @@
-import { ToDoItem } from 'src/app/models/todo-item.model';
+import { ToDoItem } from '@app/models/todo-item.model';
 import { createReducer, on } from '@ngrx/store';
 import * as fromActions from './todo.actions';
 
@@ -57,8 +57,14 @@ export const reducer = createReducer(
     error: error,
   })),
 
-  on(fromActions.updateItem, (state) => ({
+  on(fromActions.updateItem, (state, { newItem }) => ({
     ...state,
+    items: [
+      ...state.items.filter((item) => {
+        return item.id !== newItem.id;
+      }),
+      newItem,
+    ],
     loading: true,
     error: '',
   })),
@@ -74,8 +80,13 @@ export const reducer = createReducer(
     loading: false,
     error: error,
   })),
-  on(fromActions.removeItem, (state) => ({
+  on(fromActions.removeItem, (state, { id }) => ({
     ...state,
+    items: [
+      ...state.items.filter((item) => {
+        return item.id !== id;
+      }),
+    ],
     loading: true,
     error: '',
   })),

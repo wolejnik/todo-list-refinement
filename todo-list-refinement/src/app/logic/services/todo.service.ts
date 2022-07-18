@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { ToDoItem } from 'src/app/models/todo-item.model';
+import { ToDoItem } from '@app/models/todo-item.model';
 
 @Injectable({
   providedIn: 'root',
