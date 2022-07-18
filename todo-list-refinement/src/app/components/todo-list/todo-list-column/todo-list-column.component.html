@@ -1,5 +1,5 @@
 <ul class="todo-list p-3">
   <li *ngFor="let item of dataColumn" class="todo-list__item">
-    {{ item.title }}
+    <app-todo-list-task [task]="item"></app-todo-list-task>
   </li>
 </ul>

@@ -1,0 +1,45 @@
+<div class="d-flex align-items-end">
+  <h5>{{ task?.title }}</h5>
+
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="moreOptions"
+    aria-label="Options of task"
+  >
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #moreOptions="matMenu">
+    <button mat-menu-item (click)="actionUpdate()">
+      <mat-icon>update</mat-icon>
+      <span>update</span>
+    </button>
+    <button mat-menu-item (click)="actionRemove(task?.id)">
+      <mat-icon>remove_circle_outline</mat-icon>
+      <span>remove</span>
+    </button>
+    <button
+      *ngIf="task?.status !== 'todo'"
+      mat-menu-item
+      (click)="changeStatus(task, 'todo')"
+    >
+      <mat-icon>description</mat-icon>
+      <span>todo</span>
+    </button>
+    <button
+      *ngIf="task?.status !== 'inProgress'"
+      mat-menu-item
+      (click)="changeStatus(task, 'inProgress')"
+    >
+      <mat-icon>timeline</mat-icon>
+      <span>inprogress</span>
+    </button>
+    <button
+      *ngIf="task?.status !== 'done'"
+      mat-menu-item
+      (click)="changeStatus(task, 'done')"
+    >
+      <mat-icon>done</mat-icon>
+      <span>done</span>
+    </button>
+  </mat-menu>
+</div>
