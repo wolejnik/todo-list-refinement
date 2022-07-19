@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 import { ToDoItem } from '@app/models/todo-item.model';
 
 @Injectable({
@@ -54,14 +55,18 @@ export class TodoService {
   constructor() {}
 
   public getTodoListItems(): Observable<ToDoItem[]> {
-    return of(this.todoItems);
+    return of(this.todoItems).pipe(delay(2000));
   }
 
-  public createTask(name: string, statusTask: string, desc?: string): Observable<ToDoItem> {
+  public createTask(
+    name: string,
+    statusTask: string,
+    desc?: string
+  ): Observable<ToDoItem> {
     return of({
       id: this.getRandomIndex(),
       title: name,
-      desc: desc? desc: '',
+      desc: desc ? desc : '',
       status: statusTask,
     } as ToDoItem);
   }

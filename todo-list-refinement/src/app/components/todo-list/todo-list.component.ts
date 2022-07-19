@@ -12,12 +12,14 @@ import * as TodoStoreSelectors from '@app/logic/store/todo.selectors';
 })
 export class TodoListComponent implements OnInit {
   public data!: Observable<ToDoItem[]>;
+  public isLoading!: Observable<boolean>;
   constructor(private store: Store) {
     this.store.dispatch(loadAll());
   }
 
   ngOnInit() {
     this.data = this.store.select(TodoStoreSelectors.getItems);
+    this.isLoading = this.store.select(TodoStoreSelectors.getItemsLoading);
 
     // this.store.select(TodoStoreSelectors.getItems).subscribe((data) => {
     //   if (data) {

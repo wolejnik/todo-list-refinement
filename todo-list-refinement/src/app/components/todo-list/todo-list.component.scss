@@ -1,5 +1,11 @@
 @use 'mixins' as rwd;
 
+.loading-wrapper {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
 .todo-list-wrapper {
   height: 100%;
   display: flex;

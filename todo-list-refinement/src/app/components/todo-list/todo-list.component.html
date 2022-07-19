@@ -1,24 +1,31 @@
-<section class="todo-list-wrapper">
-  <div class="col p-4">
-    <h2 class="px-3">{{ "dashboard.columnToDo" | translate }}</h2>
-    <app-todo-list-column
-      [dataColumn]="data | async | filterList: 'todo'"
-    ></app-todo-list-column>
+<ng-container *ngIf="isLoading | async; else loadedTemplate">
+  <div class="loading-wrapper">
+    <mat-spinner></mat-spinner>
   </div>
-  <div class="col p-4">
-    <h2 class="px-3">{{ "dashboard.columnInProgress" | translate }}</h2>
+</ng-container>
+<ng-template #loadedTemplate>
+  <section class="todo-list-wrapper">
+    <div class="col p-4">
+      <h2 class="px-3">{{ "dashboard.columnToDo" | translate }}</h2>
+      <app-todo-list-column
+        [dataColumn]="data | async | filterList: 'todo'"
+      ></app-todo-list-column>
+    </div>
+    <div class="col p-4">
+      <h2 class="px-3">{{ "dashboard.columnInProgress" | translate }}</h2>
 
-    <app-todo-list-column
-      [dataColumn]="data | async | filterList: 'inProgress'"
-    ></app-todo-list-column>
-  </div>
-  <div class="col p-4">
-    <h2 class="px-3">{{ "dashboard.columnDone" | translate }}</h2>
-    <app-todo-list-column
-      [dataColumn]="data | async | filterList: 'done'"
-    ></app-todo-list-column>
-  </div>
-</section>
-<section class="new-task-wrapper">
-  <app-new-task></app-new-task>
-</section>
+      <app-todo-list-column
+        [dataColumn]="data | async | filterList: 'inProgress'"
+      ></app-todo-list-column>
+    </div>
+    <div class="col p-4">
+      <h2 class="px-3">{{ "dashboard.columnDone" | translate }}</h2>
+      <app-todo-list-column
+        [dataColumn]="data | async | filterList: 'done'"
+      ></app-todo-list-column>
+    </div>
+  </section>
+  <section class="new-task-wrapper">
+    <app-new-task></app-new-task>
+  </section>
+</ng-template>
