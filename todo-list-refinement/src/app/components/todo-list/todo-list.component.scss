@@ -7,7 +7,7 @@
 
   @include rwd.media-breakpoint-down('md') {
     flex-direction: column;
-    margin-top: 7rem;
+    justify-content: flex-start;
   }
 }
 
@@ -16,7 +16,7 @@
   right: 5%;
   bottom: 5%;
   @include rwd.media-breakpoint-down('md') {
-    top: 10%;
-    left: 5%;
+    top: 11%;
+    right: 5%;
   }
 }

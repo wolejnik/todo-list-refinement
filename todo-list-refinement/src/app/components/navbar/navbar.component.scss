@@ -1,4 +1,5 @@
 @use 'variables' as var;
+@use 'mixins' as rwd;
 
 .navbar-wrapper {
   background-color: var.$main-violet;
@@ -6,5 +7,11 @@
 
   &__title {
     color: var.$main-white;
+
+    & > h1 {
+      @include rwd.media-breakpoint-down('md') {
+        font-size: var.$font-32;
+      }
+    }
   }
 }
